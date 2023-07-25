@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CalculateFragment">
+    tools:context=".calculate.CalculateFragment">
+
+    <ImageView
+        android:id="@+id/imageViewCalculate"
+        android:layout_width="340dp"
+        android:layout_height="280dp"
+        android:src="@drawable/heart2"
+        android:layout_margin="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/etFirstName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <EditText
@@ -17,6 +29,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/etSecondName"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewCalculate"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -28,8 +41,7 @@
         android:paddingHorizontal="12dp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
-        app:layout_constraintTop_toBottomOf="@+id/etFirstName" />
+        app:layout_constraintTop_toBottomOf="@+id/etFirstName"/>
 
     <Button
         android:id="@+id/btnCalculate"
