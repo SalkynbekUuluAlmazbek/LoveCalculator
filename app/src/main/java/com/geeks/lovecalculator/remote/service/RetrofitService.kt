@@ -1,6 +1,6 @@
-package com.geeks.lovecalculator.service
+package com.geeks.lovecalculator.remote.service
 
-import com.geeks.lovecalculator.model.LoveApi
+import com.geeks.lovecalculator.remote.model.LoveApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

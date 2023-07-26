@@ -1,4 +1,4 @@
-package com.geeks.lovecalculator.result
+package com.geeks.lovecalculator.ui.result
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.geeks.lovecalculator.R
-import com.geeks.lovecalculator.calculate.CalculateFragment
+import com.geeks.lovecalculator.ui.calculate.CalculateFragment
 import com.geeks.lovecalculator.databinding.FragmentResultBinding
-import com.geeks.lovecalculator.model.LoveModel
+import com.geeks.lovecalculator.remote.model.LoveModel
 
 class ResultFragment : Fragment() {
 
-    lateinit var binding: FragmentResultBinding
+    private var _binding: FragmentResultBinding? = null
+    private val binding get() = _binding!!
+    private var loveModel: LoveModel? = null
 
 
     override fun onCreateView(
@@ -21,12 +23,14 @@ class ResultFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentResultBinding.inflate(layoutInflater,container,false)
+        _binding = FragmentResultBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        loveModel = arguments?.getSerializable(CalculateFragment.LOVEMODEL_KEY) as LoveModel
 
         initClickers()
         getResult()
@@ -41,10 +45,9 @@ class ResultFragment : Fragment() {
 
     private fun getResult() {
         if (arguments != null) {
-            val result = arguments?.getSerializable(CalculateFragment.LOVE_MODEL) as LoveModel
-            binding.tvFirstName.text = result.firstName
-            binding.tvSecondName.text = result.secondName
-            binding.tvResult.text = result.percentage
+            binding.tvFirstName.text = loveModel?.firstName.toString()
+            binding.tvSecondName.text = loveModel?.secondName.toString()
+            binding.tvResult.text = loveModel?.result.toString() + "%"
 
         }
 
