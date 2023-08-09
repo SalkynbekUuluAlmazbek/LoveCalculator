@@ -1,11 +1,13 @@
-package com.geeks.lovecalculator
+package com.geeks.lovecalculator.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.navigation.fragment.NavHostFragment
+import com.geeks.lovecalculator.R
 import com.geeks.lovecalculator.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding

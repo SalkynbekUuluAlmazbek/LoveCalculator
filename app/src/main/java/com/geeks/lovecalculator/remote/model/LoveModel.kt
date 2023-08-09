@@ -4,9 +4,10 @@ import com.google.gson.annotations.SerializedName
 
 data class LoveModel(
     @SerializedName("fname")
-    var firstName: String,
+    var firstName: String? = null,
     @SerializedName("sname")
-    var secondName: String,
-    var percentage: String,
-    var result: String
+    var secondName: String? = null,
+    var percentage: String? = null,
+    var result: String? = null,
+    var error: String? = null,
 ): java.io.Serializable

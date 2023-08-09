@@ -10,7 +10,9 @@ import com.geeks.lovecalculator.R
 import com.geeks.lovecalculator.ui.calculate.CalculateFragment
 import com.geeks.lovecalculator.databinding.FragmentResultBinding
 import com.geeks.lovecalculator.remote.model.LoveModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ResultFragment : Fragment() {
 
     private var _binding: FragmentResultBinding? = null
@@ -47,7 +49,7 @@ class ResultFragment : Fragment() {
         if (arguments != null) {
             binding.tvFirstName.text = loveModel?.firstName.toString()
             binding.tvSecondName.text = loveModel?.secondName.toString()
-            binding.tvResult.text = loveModel?.result.toString() + "%"
+            binding.tvResult.text = loveModel?.result.toString()
 
         }
 
